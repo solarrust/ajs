@@ -643,6 +643,11 @@ p.topped{
     line-height: 1.5 !important;
   }
 
+.fz22 {
+  font-size: 22px !important;
+  line-height: 1.5 !important;
+}
+
   .red {
     color: #d32a2a;
   }
