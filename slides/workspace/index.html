@@ -56,9 +56,9 @@
       <h2>Рабочее окружение</h2>
       <p>Под рабочим окружением мы будем понимать не только (и не столько) настройку редактора кода или IDE, сколько использование инструментов, не завязанных на IDE и облегчающих:</p>
       <ul>
-        <li>разработку;</li>
-        <li>тестирование;</li>
-        <li>соблюдение правил.</li>
+        <li>Разработку</li>
+        <li>Тестирование</li>
+        <li>Соблюдение правил</li>
       </ul>
     </section>
 
@@ -76,8 +76,8 @@
     <section class="slide">
       <h2>Причины использовать HTTP-сервер</h2>
       <ul>
-        <li>Повышается скорость разработки из-за использования профессиональных инструментов;</li>
-        <li>Разработка в команде требует знания и умения работать с общепринятыми инструментами;</li>
+        <li>Повышается скорость разработки из-за использования профессиональных инструментов.</li>
+        <li>Разработка в команде требует знания и умения работать с общепринятыми инструментами.</li>
         <li>Некоторые приложения невозможно протестировать оффлайн, без HTTP-сервера.</li>
       </ul>
     </section>
@@ -120,7 +120,7 @@
       <p>Если версия npm ниже 6.5.0, то потребуется обновить менеджер пакетов. Для этого в терминале выполните команду:</p>
       <pre class="">
         <code class="lang-bash">
-          $ npm install npm -g
+          $ npm install --global npm
         </code>
       </pre>
     </section>
@@ -218,7 +218,7 @@
       <h2>Минусы</h2>
       <p>Минусы такого подхода:</p>
       <ul>
-        <li>Засоряется «глобальная область видимости» (global mode);</li>
+        <li>Засоряется «глобальная область видимости» (global mode).</li>
         <li>Как мы будем работать в команде? Писать всем инструкции?</li>
       </ul>
       <p>Можно ли настраивать и устанавливать пакеты только для текущего проекта?</p>
@@ -251,11 +251,11 @@
     <section class="slide">
       <h2>Ключевые поля <code>package.json</code></h2>
       <ul>
-        <li><code>name</code> — название пакета;</li>
-        <li><code>version</code> — версия (в соответствии с <a href="https://semver.org">https://semver.org</a>);</li>
-        <li><code>scripts</code> — скрипты (удобные сокращения для команд);</li>
-        <li>*<code>dependencies</code> — зависимости, необходимые для функционирования пакета;</li>
-        <li>*<code>devDependencies</code> — зависимости, необходимые для разработки и (или) тестирования пакета.</li>
+        <li><code>name</code> — название пакета</li>
+        <li><code>version</code> — версия (в соответствии с <a href="https://semver.org">https://semver.org</a>)</li>
+        <li><code>scripts</code> — скрипты (удобные сокращения для команд)</li>
+        <li>*<code>dependencies</code> — зависимости, необходимые для функционирования пакета</li>
+        <li>*<code>devDependencies</code> — зависимости, необходимые для разработки и (или) тестирования пакета</li>
       </ul>
       <p class="note">* Разделы, которых у нас пока нет.</p>
     </section>
@@ -306,11 +306,11 @@
       <h2>Скрипт для сервера</h2>
       <p>Теперь возникает вопрос, как же запустить http-server?</p>
       <p>Сам исполняемый файл хранится в каталоге <code>node_modules/.bin/http-server</code>. Чтобы его запустить, мы можем прописать его в секцию <code>scripts</code> следующим образом:</p>
-      <pre class="line-numbers">
+      <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
            "serve": "http-server src",
-           "test": "echo \"Error: no test specified\" && <br> exit 1"
+           "test": "echo \"Error: no test specified\" && exit 1"
           }
         </code>
       </pre>
@@ -326,7 +326,7 @@
       <h2>Scripts</h2>
       <p>В скрипты можно прописывать любые команды, которые могут выполнится в терминале. Таким образом, это удобный способ:</p>
       <ol>
-        <li>Дать псевдоним длинной команде;</li>
+        <li>Дать псевдоним длинной команде.</li>
         <li>Определить набор стандартных команд для вашего проекта.</li>
       </ol>
     </section>
@@ -334,11 +334,11 @@
     <section class="slide">
       <h2>Стандартные имена</h2>
       <p>Ряд имён в скриптах стандартизирован и позволяет опускать ключевое слово <code>run</code>. Например, изменим секцию <code>scripts</code>:</p>
-      <pre class="line-numbers">
+      <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
            "start": "http-server src",
-           "test": "echo \"Error: no test specified\" && <br> exit 1"
+           "test": "echo \"Error: no test specified\" && exit 1"
           }
         </code>
       </pre>
@@ -395,11 +395,11 @@
     <section class="slide">
       <h2>Замена в <code>scripts</code></h2>
       <p>И заменим http-server на live-server в скрипте <code>start</code>.</p>
-      <pre class="line-numbers">
+      <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
            "start": "live-server src",
-           "test": "echo \"Error: no test specified\" && <br> exit 1"
+           "test": "echo \"Error: no test specified\" && exit 1"
           }
         </code>
       </pre>
@@ -522,11 +522,11 @@
     <section class="slide">
       <h2>lint script</h2>
       <p>Создадим отдельный скрипт <code>lint</code>, который и будет запускать ESLint в соответствии с установленными настройками:</p>
-      <pre class="line-numbers">
+      <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
            "start": "live-server src",
-           "test": "echo \"Error: no test specified\" && <br> exit 1",
+           "test": "echo \"Error: no test specified\" && exit 1",
            "lint": "eslint ."
           },
         </code>
@@ -591,8 +591,8 @@
     <section class="slide">
       <h2>Возможные решения</h2>
       <ul>
-        <li>Выбрать самый старый и писать на нём (тогда не получится использовать новые возможности);</li>
-        <li>Выбрать самый новый и не думать о совместимости (тогда придётся переписывать);</li>
+        <li>Выбрать самый старый и писать на нём (тогда не получится использовать новые возможности).</li>
+        <li>Выбрать самый новый и не думать о совместимости (тогда придётся переписывать).</li>
         <li>Одновременно поддерживать несколько версий (трудоёмко).</li>
       </ul>
     </section>
@@ -633,11 +633,11 @@
     <section class="slide">
       <h2>Добавляем в <code>scripts</code></h2>
       <p>После чего в <code>scripts</code> прописать:</p>
-      <pre class="line-numbers">
+      <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
            "start": "live-server src",
-           "test": "echo \"Error: no test specified\" && <br> exit 1",
+           "test": "echo \"Error: no test specified\" && exit 1",
            "lint": "eslint .",
            "build": "babel src -d dist"
           },
@@ -686,7 +686,7 @@
 
     <section class="slide">
       <h2>Зачем это всё?</h2>
-      <p>Это инфраструктура современного JS. В дальнейшем, с каким бы вы проектом или фреймворком (Angular, Vue, React) не сталкивались с большой долей вероятности он будет использовать эту инфраструктуру.</p>
+      <p>Это инфраструктура современного JS. В дальнейшем, с каким бы вы проектом или фреймворком (Angular, Vue, React) не сталкивались, с большой долей вероятности он будет использовать эту инфраструктуру.</p>
     </section>
 
     <section class="slide chapter">
