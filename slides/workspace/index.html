@@ -56,9 +56,9 @@
       <h2>Рабочее окружение</h2>
       <p>Под рабочим окружением мы будем понимать не только (и не столько) настройку редактора кода или IDE, сколько использование инструментов, не завязанных на IDE и облегчающих:</p>
       <ul>
-        <li>Разработку</li>
-        <li>Тестирование</li>
-        <li>Соблюдение правил</li>
+        <li>разработку</li>
+        <li>тестирование</li>
+        <li>соблюдение правил</li>
       </ul>
     </section>
 
@@ -75,11 +75,11 @@
 
     <section class="slide">
       <h2>Причины использовать HTTP-сервер</h2>
-      <ul>
+      <ol>
         <li>Повышается скорость разработки из-за использования профессиональных инструментов.</li>
         <li>Разработка в команде требует знания и умения работать с общепринятыми инструментами.</li>
         <li>Некоторые приложения невозможно протестировать оффлайн, без HTTP-сервера.</li>
-      </ul>
+      </ol>
     </section>
 
     <section class="slide chapter" id="npm">
@@ -309,8 +309,8 @@
       <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
-           "serve": "http-server src",
-           "test": "echo \"Error: no test specified\" && exit 1"
+            "serve": "http-server src",
+            "test": "echo \"Error: no test specified\" && exit 1"
           }
         </code>
       </pre>
@@ -325,10 +325,10 @@
     <section class="slide">
       <h2>Scripts</h2>
       <p>В скрипты можно прописывать любые команды, которые могут выполнится в терминале. Таким образом, это удобный способ:</p>
-      <ol>
-        <li>Дать псевдоним длинной команде.</li>
-        <li>Определить набор стандартных команд для вашего проекта.</li>
-      </ol>
+      <ul>
+        <li>дать псевдоним длинной команде;</li>
+        <li>определить набор стандартных команд для вашего проекта.</li>
+      </ul>
     </section>
 
     <section class="slide">
@@ -337,8 +337,8 @@
       <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
-           "start": "http-server src",
-           "test": "echo \"Error: no test specified\" && exit 1"
+            "start": "http-server src",
+            "test": "echo \"Error: no test specified\" && exit 1"
           }
         </code>
       </pre>
@@ -398,8 +398,8 @@
       <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
-           "start": "live-server src",
-           "test": "echo \"Error: no test specified\" && exit 1"
+            "start": "live-server src",
+            "test": "echo \"Error: no test specified\" && exit 1"
           }
         </code>
       </pre>
@@ -525,9 +525,9 @@
       <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
-           "start": "live-server src",
-           "test": "echo \"Error: no test specified\" && exit 1",
-           "lint": "eslint ."
+            "start": "live-server src",
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "lint": "eslint ."
           },
         </code>
       </pre>
@@ -590,25 +590,25 @@
 
     <section class="slide">
       <h2>Возможные решения</h2>
-      <ul>
+      <ol>
         <li>Выбрать самый старый и писать на нём (тогда не получится использовать новые возможности).</li>
         <li>Выбрать самый новый и не думать о совместимости (тогда придётся переписывать).</li>
         <li>Одновременно поддерживать несколько версий (трудоёмко).</li>
-      </ul>
+      </ol>
     </section>
 
     <section class="slide">
       <h2>Babel</h2>
-      <p>Проект <a href="https://babeljs.io">Babel</a> предлагает альтернативное решение: транспайлер — инструмент, преобразующий код из одной версии стандарта в другую (более старую).</p>
+      <p>Проект <a href="https://babeljs.io">Babel</a> предлагает альтернативное решение: транспайлер — инструмент, преобразующий код из одной версии стандарта в другую, более старую.</p>
       <p>Тоесть мы можем использовать большинство* новых возможностей языка и получать код, написанный в режиме совместимости с нужной нам версией.</p>
       <p class="note">* Если они поддерживаются транспайлером.</p>
     </section>
 
     <section class="slide">
       <h2>Устанавливаем Babel</h2>
-      <pre class="">
+      <pre class="fz20">
         <code class="lang-bash">
-          $ npm install --save-dev @babel/core @babel/cli <br> @babel/preset-env
+          $ npm install --save-dev @babel/core @babel/cli @babel/preset-env
         </code>
       </pre>
     </section>
@@ -636,10 +636,10 @@
       <pre class="line-numbers fz22">
         <code class="lang-json">
           "scripts": {
-           "start": "live-server src",
-           "test": "echo \"Error: no test specified\" && exit 1",
-           "lint": "eslint .",
-           "build": "babel src -d dist"
+            "start": "live-server src",
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "lint": "eslint .",
+            "build": "babel src -d dist"
           },
         </code>
       </pre>
@@ -698,8 +698,8 @@
       <ol>
         <li>npm — позволяет упростить работу с проектами и зависимостями.</li>
         <li>live-server — позволяет упростить разработку и отладку в браузере.</li>
-        <li>eslint — позволяет искать ошибки и соблюдать стиль кодирования.</li>
-        <li>babel — решает проблему поддержки предыдущих версий стандарта.</li>
+        <li>ESLint — позволяет искать ошибки и соблюдать стиль кодирования.</li>
+        <li>Babel — решает проблему поддержки предыдущих версий стандарта.</li>
       </ol>
     </section>
 
@@ -707,8 +707,8 @@
       <h2>Требования к домашним работам</h2>
       <p>Начиная с сегодняшнего дня во всех домашних заданиях будет требоваться:</p>
       <ul>
-        <li>Использования npm при формировании проекта ДЗ.</li>
-        <li>Соответсвия ESLint набору правил Airbnb на уровне отсутствия ошибок (error).</li>
+        <li>использования npm при формировании проекта ДЗ;</li>
+        <li>соответсвия ESLint набору правил Airbnb на уровне отсутствия ошибок (error).</li>
       </ul>
     </section>
 
